@@ -124,7 +124,7 @@ int notified = 0;
 static void print_apps_header()
 {
 	/* output app details header */
-	printf("%s", "CFBundleIdentifier");
+	printf("%s", "CFBundleShortVersionString");
 	printf(", %s", "CFBundleVersion");
 	printf(", %s", "CFBundleDisplayName");
 	printf("\n");
@@ -140,7 +140,7 @@ static void print_apps(plist_t apps)
 		char *s_display_name = NULL;
 		char *s_version = NULL;
 		plist_t display_name = plist_dict_get_item(app, "CFBundleDisplayName");
-		plist_t version = plist_dict_get_item(app, "CFBundleVersion");
+		plist_t version = plist_dict_get_item(app, "CFBundleShortVersionString");
 
 		if (p_bundle_identifier) {
 			plist_get_string_val(p_bundle_identifier, &s_bundle_identifier);
@@ -787,7 +787,7 @@ run_again:
 			instproxy_client_options_set_return_attributes(client_opts,
 				"CFBundleIdentifier",
 				"CFBundleDisplayName",
-				"CFBundleVersion",
+				"CFBundleShortVersionString",
 				"StaticDiskUsage",
 				"DynamicDiskUsage",
 				NULL
