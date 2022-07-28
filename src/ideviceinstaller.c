@@ -124,8 +124,8 @@ int notified = 0;
 static void print_apps_header()
 {
 	/* output app details header */
-	printf("%s", "CFBundleShortVersionString");
-	printf(", %s", "CFBundleVersion");
+	printf("%s", "CFBundleIdentifier");
+	printf(", %s", "CFBundleShortVersionString");
 	printf(", %s", "CFBundleDisplayName");
 	printf("\n");
 }
